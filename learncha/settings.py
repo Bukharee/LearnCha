@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django_countries',
 
 ]
+LOGIN_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
