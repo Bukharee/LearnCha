@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'Users',
+    'Dictionary',
     #third party
     'phonenumber_field',
     'django_countries',
