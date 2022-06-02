@@ -12,3 +12,4 @@ class User(AbstractUser):
     phone = PhoneNumberField()
     grade = models.CharField(choices=GRADE_CHOICES, max_length=50)
     nation = CountryField(blank_label='select country')
+    score = models.IntegerField(default=0)

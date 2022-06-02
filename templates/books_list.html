@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/test.css' %}" />
+<h1>Welcome To Books1</h1>
+<p>{{ message }}</p>
+
+<style>
+  #books {
+    display: flex;
+    flex-wrap: wrap;
+  }
+</style>
+
+<div id="books">
+  {% for book in books %}
+  <div>
+    <a href="{{ book.book }}"><p>{{ book.title }}</p></a>
+  </div>
+  {% endfor %}
+</div>

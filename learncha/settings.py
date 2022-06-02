@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'Users',
     'Dictionary',
+    'Books',
     #third party
     'phonenumber_field',
     'django_countries',
@@ -126,6 +127,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = ( os.path.join('/static'), )
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #Location of static files
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 # Default primary key field type
