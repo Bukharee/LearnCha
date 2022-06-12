@@ -10,12 +10,15 @@ def search(request):
     form = SearchForm()
     query = request.GET.get('query')
     if query:
-        response = requests.get(f"{dictionary_url}{query}").json()
-        print(response)
-        print(response[0]["meanings"][0]["definitions"][0]["definition"])
-        if "title" in response:
-            return render(request, 'search.html', {"response": "NOT A VALID WORD", "form": form})
-        return render(request, "search.html", {"response":response, "form": form})
+        try:
+            response = requests.get(f"{dictionary_url}{query}").json()
+            print(response)
+            print(response[0]["meanings"][0]["definitions"][0]["definition"])
+            if "title" in response:
+                return render(request, 'search.html', {"response": "NOT A VALID WORD", "form": form})
+            return render(request, "search.html", {"response": response, "form": form})
+        except:
+            return render(request, "search.html", {"response": "No Internet Connection", "form": form})
     else:
         return render(request, "search.html", {"form": form})
 
@@ -28,18 +31,18 @@ def search(request):
 #     if "title" in response:
 #         return "Not a Valid Word"
 #     return str(response[0]["meanings"][0]["definitions"][0]["definition"])
-    
 
-# def ussd(): 
+
+# def ussd():
 #   # Read the variables sent via POST from our API
 #   session_id   = request.values.get("sessionId", None)
 #   serviceCode  = request.values.get("serviceCode", None)
 #   phone_number = request.values.get("phoneNumber", None)
 #   text         = request.values.get("text", "default")
-  
+
 #   """"
 #   -first dial
-#   -if registered 
+#   -if registered
 #         -play a game
 #         - dictionary
 #         -topics
@@ -71,7 +74,7 @@ def search(request):
 #               return "Not a Valid Word"
 #           return str(response[0]["meanings"][0]["definitions"][0]["definition"])
 #           response = "CON Enter A Word "
-          
+
 
 #       elif text == '1*1':
 #           # This is a second level response where the user selected 1 in the first instance
@@ -85,10 +88,7 @@ def search(request):
 #   else:
 #     pass
 #     #register user here
-      
 
 
 #   # Send the response back to the API
 #   return response
-
-
