@@ -12,7 +12,8 @@
 
 <div id="books">
   {% for book in books %}
-  <div>
+  <div> 
+    <img src="{{ book.cover.url }}" alt="book" width="200" />
     <a href="{{ book.book }}"><p>{{ book.title }}</p></a>
   </div>
   {% endfor %}

@@ -6,9 +6,9 @@ from .forms import CustomUserCreationForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
+
 def home(request):
     return render(request, 'home.html')
-
 
 
 class SignUpView(CreateView):
@@ -21,3 +21,8 @@ class SignUpView(CreateView):
 def add_points(request, point):
     request.user.score += point
     request.user.save()
+
+
+@login_required
+def profile(request):
+    return render(request, "registration/profile.html")

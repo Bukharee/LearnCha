@@ -17,9 +17,13 @@ def categories(request):
     pass
 
 
-def subjects_list(request):
+def subjects_list(request, quiz=False):
+    if not quiz:
+        link = "grade"
+    else:
+        link = "quiz"
     subjects = Subject.objects.all()
-    return render(request, 'subjects.html', {"subjects": subjects})
+    return render(request, 'subjects.html', {"subjects": subjects, "link": link})
 
 
 @login_required
