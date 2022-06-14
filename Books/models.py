@@ -42,6 +42,10 @@ class Quiz(models.Model):
 
 class AnswerManager(models.Manager):
     def get_random(self, subject):
+        """
+        used to fetch atmost 10 question of a
+        particular subject
+        """
         questions = []
         subjects_questions = self.filter(question__subject=subject).count()
         if subjects_questions > 10:
@@ -49,7 +53,8 @@ class AnswerManager(models.Manager):
                 try:
                     count = self.aggregate(count=Count('id'))['count']
                     random_index = randint(0, count - 1)
-                    question = self.filter(question__subject=subject)[random_index]
+                    question = self.filter(question__subject=subject)[
+                        random_index]
                     if question and question not in questions:
                         questions.append(question)
                 except ValueError:
@@ -58,7 +63,6 @@ class AnswerManager(models.Manager):
         else:
             questions = self.filter(question__subject=subject)
             return questions
-
 
 
 class Answer(models.Model):
