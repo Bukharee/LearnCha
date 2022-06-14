@@ -51,7 +51,7 @@ def quiz(request, subject_title):
         return render(request, 'quiz.html', {"questions": None, "message":
                                              "not a valid subject"})
     else:
-        questions = Answer.my_objects.get_random()
+        questions = Answer.my_objects.get_random(subject=subject_title)
         return render(request, 'quiz.html', {"questions": questions})
 
 
