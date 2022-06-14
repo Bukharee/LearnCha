@@ -21,7 +21,7 @@ from django.conf import settings
 
 admin.site.site_header = 'LearnCha'
 admin.site.index_title = 'LearnCha Administration'
-admin.site.site_title = ''
+admin.site.site_title = '   '
 
 urlpatterns = [
     path('admin/', admin.site.urls),

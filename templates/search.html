@@ -3,3 +3,10 @@
   <input type="submit" value="Search" />
   {{ response }}
 </form>
+<h4>{{ data.word }} : {{ data.phonetic }}</h4>
+<p>{{ data.meaning }}</p>
+
+<audio controls autoplay>
+  <source src="{{ data.audio }}" type="audio/ogg">
+  Listen to Pronounciation
+</audio

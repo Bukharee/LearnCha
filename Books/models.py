@@ -41,14 +41,23 @@ class Quiz(models.Model):
 
 
 class AnswerManager(models.Manager):
-    def get_random(self):
-        try:
-            count = self.aggregate(count=Count('id'))['count']
-            random_index = randint(0, count - 1)
-            return self.all()[random_index]
-        except ValueError:
-            return None
+    def get_random(self, subject):
+        questions = []
+        while len(questions) <= 10:
+            try:
+                count = self.aggregate(count=Count('id'))['count']
+                random_index = randint(0, count - 1)
+                question = self.filter(question__subject=subject)[random_index]
+                if question and question not in questions:
+                    questions.append(question)
+            except ValueError:
+                return None
+        return questions
 
+  """
+  problem: return only for specific subject.
+  return 20 questions
+  """
 
 class Answer(models.Model):
     question = models.ForeignKey(Quiz, on_delete=models.CASCADE)
