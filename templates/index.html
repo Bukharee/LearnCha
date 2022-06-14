@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
 <!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--> <html lang="en"> <!--<![endif]-->
@@ -10,8 +11,17 @@
 	<title>Kid' school - Home</title>
 	<link href='http://fonts.googleapis.com/css?family=Gochi+Hand|Arvo:400,700' rel='stylesheet' type='text/css'>
 	<link href="css/jquery.bxslider.css" rel="stylesheet" />
-	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -19,6 +29,8 @@
 <body>
 	<div id="wrapper" class="homepage">
 		<div class="wrapper-holder">
+
+			<!-- header starts hre... -->
 			<header id="header">
 				<div class="left-part "></div>
 				<a id="logo" href="index.html">Learncha</a>
@@ -37,6 +49,93 @@
 					</nav>
 				</div>
 			</header>
+				<!-- header ends here... -->
+
+				<!-- carousel starts here... -->
+			<div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
+				<div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+				  <button
+					type="button"
+					data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="0"
+					class="active"
+					aria-current="true"
+					aria-label="Slide 1"
+				  ></button>
+				  <button
+					type="button"
+					data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="1"
+					aria-label="Slide 2"
+				  ></button>
+				  <button
+					type="button"
+					data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="2"
+					aria-label="Slide 3"
+				  ></button>
+				</div>
+				<div class="carousel-inner relative w-full overflow-hidden">
+				  <div class="carousel-item active relative float-left w-full">
+					<img
+					  src="./images/slide4.jpg"
+					  class="block w-full h-96 object-cover"
+					  alt="..."
+					/>
+					<div class="carousel-caption hidden md:block absolute text-center">
+					  <h5 class="text-xl">First slide label</h5>
+					  <p>Some representative placeholder content for the first slide.</p>
+					</div>
+				  </div>
+				  <div class="carousel-item relative float-left w-full">
+					<img
+					  src="./images/slide4.jpg"
+					  class="block w-full h-96 object-cover images"
+					  alt="..."
+					/>
+					<div class="carousel-caption hidden md:block absolute text-center">
+					  <h5 class="text-xl">Second slide label</h5>
+					  <p>Some representative placeholder content for the second slide.</p>
+					</div>
+				  </div>
+				  <div class="carousel-item relative float-left w-full">
+					<img
+					  src="./images/slide4.jpg"
+					  class="block w-full h-96 object-cover images"
+					  alt="..."
+					/>
+					<div class="carousel-caption hidden md:block absolute text-center">
+					  <h5 class="text-xl">Third slide label</h5>
+					  <p>Some representative placeholder content for the third slide.</p>
+					</div>
+				  </div>
+				</div>
+				<button
+				  class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+				  type="button"
+				  data-bs-target="#carouselExampleCaptions"
+				  data-bs-slide="prev"
+				>
+				  <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+				  <span class="visually-hidden">Previous</span>
+				</button>
+				<button
+				  class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+				  type="button"
+				  data-bs-target="#carouselExampleCaptions"
+				  data-bs-slide="next"
+				>
+				  <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+				  <span class="visually-hidden">Next</span>
+				</button>
+			  </div>
+			  <!-- carousel ends ..... -->
+
+			  <br>
+			  <br>
+			  <br>
+
+			  <!-- promo starts here -->
 			<section class="promo flex justify-center">
 				<div class="slider-wrap max-w-5xl">
 					<ul class="slider flex flex-col space-y-10">
@@ -61,6 +160,85 @@
 					</ul>
 				</div>
 			</section>
+			<!-- promo ends here... -->
+ 
+			<!-- Services starts here... -->
+			<div class="services">
+			<h2>Our Services</h2>
+			<div class="main m-5 flex flex-col items-center">
+
+
+				<div class="card-container my-10 flex flex-col md:flex-row justify-center border-none items-center w-full  md:1/2 max-w-5xl">
+				  <div class="flex flex-col items-center justify-center w-full m-5  rounded-md overflow-hidden">
+					  <div class="plate w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md scale-100 hover:scale-75 ease-in duration-500" style=" background-color: white; background-image: url(./images/best-kids-games-app.jpg);">
+			
+					  </div>
+			
+					  <div class="relative w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64" style="background-color: #ce5a5d;">
+						  <h3 class="py-2 font-bold tracking-wide text-center uppercase text-white" style="font-size: x-large;">Games</h3>
+							
+						  <div class="flex items-center justify-end px-3 py-2">
+							  <button class="transition ease-in-out delay-150 learncha-font-2 hover:-translate-y-1 hover:scale-110 hover:bg-blue-100 duration-300 bg-white p-3 text-xs font-semibold text-white uppercase rounded focus:outline-none"><a href="{% url 'dictionary:games' %}">PLAY GAMES</a></button>
+						  </div>
+					  </div>
+				  </div>
+			
+			
+				  <div class="flex flex-col items-center justify-center w-full m-5  rounded-md overflow-hidden">
+					<div class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"  style="background-image: url(./images/best-english-dictionary-app.jpg)"></div>
+			
+					<div class="w-56 -mt-10 overflow-hidden rounded-lg shadow-lg md:w-64" style="background-color: #ce5a5d;">
+						<h3 class="py-2 font-bold tracking-wide text-center uppercase text-white" style="font-size: x-large;">Dictionary</h3>
+						
+						<div class="flex items-center justify-end px-3 py-2">
+							<!-- <span class="font-bold text-gray-800 dark:text-gray-200">$129</span> -->
+							<button class="transition ease-in-out delay-150 learncha-font-2 hover:-translate-y-1  hover:scale-110 hover:bg-blue-100 duration-300  text-xs font-semibold text-white uppercase bg-white p-3  rounded  focus:bg-blue-300 dark:focus:bg-blue-300 focus:outline-none"><a href="{% url 'dictionary:search' %}">Search for words</a></button>
+						</div>
+					</div>
+				  </div>
+				</div>
+				
+			
+			
+			   
+			
+				<div class="card-container flex flex-col md:flex-row justify-center border-none items-center w-full  md:1/2 max-w-5xl">
+				  <div class="flex flex-col items-center justify-center w-full m-5  rounded-md  overflow-hidden">
+					  <div class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg rotate" style="background-repeat: no-repeat; background-size: 151px;background-color: white; background-image: url(./images/question.png); object-fit: contain;"></div>
+			
+					  <div class="w-56 -mt-10 overflow-hidden  rounded-lg shadow-lg md:w-64" style="background-color: #ce5a5d;">
+						  <h3 class="py-2 font-bold tracking-wide text-center uppercase text-white" style="font-size: x-large;">Quiz</h3>
+						  
+						  <div class="flex items-center justify-end px-3 py-2">
+							  <button class="transition ease-in-out delay-150 learncha-font-2 hover:-translate-y-1 hover:scale-110  duration-300  text-xs font-semibold text-white uppercase rounded bg-white p-3  focus:outline-none"><a href="{% url 'books:subject_quiz' 'quiz' %}">Test Learning</a></button>
+						  </div>
+					  </div>
+				  </div>
+			
+			
+				  <div class="flex flex-col items-center justify-center w-full m-5  rounded-md overflow-hidden">
+					<div class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style="background-color: white; background-image: url(./images/images.jpg)"></div>
+			
+					<div class="w-56 -mt-10 overflow-hidden  rounded-lg shadow-lg" style="background-color: #ce5a5d;">
+						<h3 class="py-2 font-bold tracking-wide text-center uppercase dark:text-white text-white" style="font-size: x-large;">Books</h3>
+						
+						<div class="flex items-center justify-end px-3 py-2">
+							<!-- <span class="font-bold text-gray-800 dark:text-gray-200">$129</span> -->
+							<button class="transition ease-in-out delay-150 learncha-font-2 hover:-translate-y-1 hover:scale-110 hover:bg-blue-100 duration-300 text-xs font-semibold text-white uppercase  rounded  bg-white p-3  focus:outline-none"><a href="{% url 'books:subjects' %}">Read and Have Fun</a></button>
+						</div>
+					</div>
+				  </div>
+				</div>
+				
+			
+			
+			
+				</div>
+			  </div>
+			</div>
+			  <!-- Services ends... -->
+
+
 			<section id="main">
 				<div class="widget-boxes">
 					<div class="box">
@@ -260,7 +438,7 @@
 						<h2>Latest news</h2>
 						<div class="box">
 							<a class="news-img" href="#">
-								<img src="images/img-news01.jpg" alt="" />
+								<img src="{% static 'images/img-news01.jpg' %}" alt="" />
 								<div class="mask"></div>
 							</a>
 							<div class="box-info">
@@ -274,7 +452,7 @@
 						</div>
 						<div class="box">
 							<a class="news-img" href="#">
-								<img src="images/img-news02.jpg" alt="" />
+								<img src="{% static 'images/img-news02.jpg' %}" alt="" />
 								<div class="mask"></div>
 							</a>
 							<div class="box-info">
@@ -288,7 +466,7 @@
 						</div>
 						<div class="box">
 							<a class="news-img" href="#">
-								<img src="images/img-news03.jpg" alt="" />
+								<img src="{% static 'images/img-news03.jpg' %}" alt="" />
 								<div class="mask"></div>
 							</a>
 							<div class="box-info">
@@ -366,8 +544,24 @@
 	</div>
 	
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
-	<script type="text/javascript" src="js/jquery.placeholder.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.placeholder.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+	    
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="js/tailwind.js"></script>
+	<script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/custom.js"></script><script>
+	  tailwind.config = {
+		theme: {
+		  extend: {
+			fontFamily: {
+			  sans: ['Inter', 'sans-serif'],
+			},
+		  }
+		}
+	  }
+	</script>
 </body>
 </html>
