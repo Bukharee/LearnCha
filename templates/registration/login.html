@@ -1,31 +1,76 @@
-{% block content %} {% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %} {% if next %} {% if user.is_authenticated %}
-<p>
-  Your account doesn't have access to this page. To proceed, please login with
-  an account that has access.
-</p>
-{% else %}
-<p>Please login to see this page.</p>
-{% endif %} {% endif %}
+{% block content %} 
 
-<form method="post" action="{% url 'login' %}">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>log in</title>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+    <style>
+        header {
+            margin-left: 130px;
+            margin-top: 120px;
+        }
+        .error-message {
+          font-size: small;
+    color: red;
+    margin-top: -14px;
+    margin-bottom: 10px;
+        }
+        .link {
+          color: #4e87a0;
+        }
+
+    </style>
+</head>
+
+<body class="bg-blue-200">
+
+    </div>
+    <header class="container  max-w-md">
+        <div class=" ">
+
+            <form class="bg-white p-6 rounded-lg px-9 max-h-28 " method="post">
   {% csrf_token %}
-  <table>
-    <tr>
-      <td>{{ form.username.label_tag }}</td>
-      <td>{{ form.username }}</td>
-    </tr>
-    <tr>
-      <td>{{ form.password.label_tag }}</td>
-      <td>{{ form.password }}</td>
-    </tr>
-  </table>
-  <input type="submit" value="login" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</form>
 
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+                <div class="mb-6 bg-white">
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300 text-center text-3xl text-blue-500 font-semibold">Log In</label>
+                    <input type="text" placeholder="Username" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+                <div class="mb-6">
+                  <input placeholder="Password" type="password" name="password" autocomplete="current-password" required="" id="id_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+                {% if form.errors %}
+                <p class="error-message">Your username and password didn't match. Please try again.</p>
+                {% endif %}
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                <div class="flex items-space-between">
+                  <p style="font-size: x-small; margin: 4px">Forget Password ? <a class="link" href="#">Reset</a></p>
+                  <p style="font-size: x-small; margin: 4px">Dont Have An Account ?<a class="link" href="#">Login</a></p>
+  
+                </div>
+              </div>
+            </form>
+
+        </div>
+
+
+
+
+
+
+
+    </header>
+
+
+</body>
+<script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+
+
+</html>
+
 
 {% endblock %}

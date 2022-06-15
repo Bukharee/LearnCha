@@ -6,6 +6,9 @@ from .forms import SearchForm
 
 
 def search(request):
+    """
+    example = response[3][1][5][3]
+    """
     dictionary_url = "https://api.dictionaryapi.dev/api/v2/entries/en/"
     form = SearchForm()
     query = request.GET.get('query')
@@ -16,10 +19,11 @@ def search(request):
             print(response[0]["meanings"][0]["definitions"][0]["definition"])
             if "title" in response:
                 return render(request, 'search.html', {"response": "NOT A VALID WORD", "form": form})
-            data = {"word": response[0]["word"],
+            data = {
+                "word": response[0]["word"],
                     "phonetic": response[0]["phonetic"],
                     "meaning": response[0]["meanings"][0]["definitions"][0]["definition"],
-                    "audio": response[0]['phonetics'][0]['audio']
+                    "audio": response[0]['phonetics'][0]['audio'],
                     }
             print(data["word"])
             return render(request, "search.html", {"response": response, "data": data, "form": form})
@@ -35,6 +39,9 @@ def d_game(request):
 
 def d_game2(request):
     return render(request, "d_game2.html")
+
+def d_game3(request):
+    return render(request, "one-word-four-pictures.html")
 
 
 def game_list(request):

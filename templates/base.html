@@ -1,0 +1,129 @@
+{% load static  %}
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="format-detection" content="telephone=no">
+	<title>Kid' school - Home</title>
+	<link href='http://fonts.googleapis.com/css?family=Gochi+Hand|Arvo:400,700' rel='stylesheet' type='text/css'>
+	<link href="css/jquery.bxslider.css" rel="stylesheet" />
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<div id="wrapper" class="homepage">
+    <div class="wrapper-holder">
+
+        <!-- header starts hre... -->
+        <header id="header">
+            <div class="left-part "></div>
+            <a id="logo" href="index.html">Learncha</a>
+            <div class="bar-holder">
+                <a class="menu_trigger" href="#"></a>
+                <nav id="nav">
+                    <ul class="">
+                        <li><a href="{% url 'users:about' %}">About us</a></li>
+                        <li><a href="{% url 'dictionary:games' %}">Games</a></li>
+                        <li><a href="{% url 'dictionary:search' %}">Dictionary</a></li>
+                        <li><a href="diy.html">DIY</a></li>
+                        <li><a href="climate-challenge.html">Climate Challenge</a></li>
+                        <li><a href="{% url 'books:subject_quiz' 'quiz' %}">Quiz</a></li>
+                        <li><a href="{% url 'users:contact' %}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+            <!-- header ends here... -->
+
+            <!-- carousel starts here... -->
+        <div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
+            <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+            <div class="carousel-inner relative w-full overflow-hidden">
+              <div class="carousel-item active relative float-left w-full">
+                <img
+                  src="{% static 'images/caro1.jpg' %}"
+                  class="block w-full h-96 object-cover"
+                  alt="..."
+                />
+                <div class="carousel-caption hidden md:block absolute text-center">
+                  <h5 class="text-xl">Gamify the Sysytem Of Learning!</h5>
+                  <p>Number One Ultimate Platform That Gamifies Learning </p>
+                </div>
+              </div>
+              <div class="carousel-item relative float-left w-full">
+                <img
+                  src="{% static 'images/caro2.jpg' %}"
+                  class="block w-full h-96 object-cover images"
+                  alt="..."
+                />
+                <div class="carousel-caption hidden md:block absolute text-center">
+                  <h5 class="text-xl">Have Fun And Learn</h5>
+                  <p>Dont Stop Playing Your Games Just Beacause You Want To Study </p>
+                </div>
+              </div>
+              <div class="carousel-item relative float-left w-full">
+                <img
+                  src="{% static 'images/caro4.jpg' %}"
+                  class="block w-full h-96 object-cover images"
+                  alt="..."
+                />
+                <div class="carousel-caption hidden md:block absolute text-center">
+                  <h5 class="text-xl"> </h5>
+                  <p>Some representative placeholder content for the third slide.</p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next"
+            >
+              <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <!-- carousel ends ..... -->
+          {% block content %}
+          {% endblock  %}

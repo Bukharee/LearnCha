@@ -38,13 +38,13 @@
 					<a class="menu_trigger" href="#"></a>
 					<nav id="nav">
 						<ul class="">
-							<li><a href="about.html">About us</a></li>
-							<li><a href="games.html">Games</a></li>
-							<li><a href="dictionary.html">Dictionary</a></li>
+							<li><a href="{% url 'users:about' %}">About us</a></li>
+							<li><a href="{% url 'dictionary:games' %}">Games</a></li>
+							<li><a href="{% url 'dictionary:search' %}">Dictionary</a></li>
 							<li><a href="diy.html">DIY</a></li>
 							<li><a href="climate-challenge.html">Climate Challenge</a></li>
-							<li><a href="gallery.html">Gallery</a></li>
-							<li><a href="index.html">Contact</a></li>
+							<li><a href="{% url 'books:subject_quiz' 'quiz' %}">Quiz</a></li>
+							<li><a href="{% url 'users:contact' %}">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -78,34 +78,34 @@
 				<div class="carousel-inner relative w-full overflow-hidden">
 				  <div class="carousel-item active relative float-left w-full">
 					<img
-					  src="./images/slide4.jpg"
+					  src="{% static 'images/caro1.jpg' %}"
 					  class="block w-full h-96 object-cover"
 					  alt="..."
 					/>
 					<div class="carousel-caption hidden md:block absolute text-center">
-					  <h5 class="text-xl">First slide label</h5>
-					  <p>Some representative placeholder content for the first slide.</p>
+					  <h5 class="text-xl">Gamify the Sysytem Of Learning!</h5>
+					  <p>Number One Ultimate Platform That Gamifies Learning </p>
 					</div>
 				  </div>
 				  <div class="carousel-item relative float-left w-full">
 					<img
-					  src="./images/slide4.jpg"
+					  src="{% static 'images/caro2.jpg' %}"
 					  class="block w-full h-96 object-cover images"
 					  alt="..."
 					/>
 					<div class="carousel-caption hidden md:block absolute text-center">
-					  <h5 class="text-xl">Second slide label</h5>
-					  <p>Some representative placeholder content for the second slide.</p>
+					  <h5 class="text-xl">Have Fun And Learn</h5>
+					  <p>Dont Stop Playing Your Games Just Beacause You Want To Study </p>
 					</div>
 				  </div>
 				  <div class="carousel-item relative float-left w-full">
 					<img
-					  src="./images/slide4.jpg"
+					  src="{% static 'images/caro4.jpg' %}"
 					  class="block w-full h-96 object-cover images"
 					  alt="..."
 					/>
 					<div class="carousel-caption hidden md:block absolute text-center">
-					  <h5 class="text-xl">Third slide label</h5>
+					  <h5 class="text-xl"> </h5>
 					  <p>Some representative placeholder content for the third slide.</p>
 					</div>
 				  </div>
@@ -140,11 +140,12 @@
 				<div class="slider-wrap max-w-5xl">
 					<ul class="slider flex flex-col space-y-10">
 						<li class="flex md:space-x-4 md:space-x-8 justify-between flex-col md:flex-row">
-							<img class="slide rounded-lg" src="https://images.unsplash.com/photo-1565350831386-8c52421af9fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8a2lkcyUyMGxlYXJuaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+							<img class="slide rounded-lg" src="{% static 'images/for_kids.jpg' %}" width="500">
 							<!-- <img class="slide-mask" src="https://images.unsplash.com/photo-1603354350317-6f7aaa5911c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8a2lkcyUyMGxlYXJuaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt=""> -->
+							
 							<div class="">
-								<h1><a href="#">Education for kids</a></h1>
-								<p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo dolorem nihil eius eveniet officia mollitia fugit recusandae repellendus. Unde ratione non in dolores sequi numquam accusantium esse hic ea nesciunt.</p>
+								<h1><a href="#">Games for kids</a></h1>
+								<p class="mb-4">Discover the best educational games for kids online across different subject areas including math, science, art, history and more.Educational games make a great alternative for children who don't learn best through pencil and paper instruction</p>
 								<a class="btn red" href="#">Learn more</a>
 							</div>
 						</li>
@@ -152,8 +153,9 @@
 							<img class="slide rounded-lg" src="https://images.unsplash.com/photo-1565350831386-8c52421af9fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8a2lkcyUyMGxlYXJuaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
 							<!-- <img class="slide-mask" src="https://images.unsplash.com/photo-1603354350317-6f7aaa5911c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8a2lkcyUyMGxlYXJuaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt=""> -->
 							<div class="">
-								<h1><a href="#">Games for kids</a></h1>
-								<p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo dolorem nihil eius eveniet officia mollitia fugit recusandae repellendus. Unde ratione non in dolores sequi numquam accusantium esse hic ea nesciunt.</p>
+								<h1><a href="#">Education for kids</a></h1>
+								<p class="mb-4">Encouraging your child to spend their screen time playing educational video games for kids not only strengthens their skills in various subjects but can also help transform them into lifelong learners!
+								</p>
 								<a class="btn red" href="#">Learn more</a>
 							</div>
 						</li>
@@ -165,7 +167,8 @@
 			<!-- Services starts here... -->
 			<div class="services">
 			<h2>Our Services</h2>
-			<div class="main m-5 flex flex-col items-center">
+			<div class="top-blue-border"></div>
+			<div class="main flex flex-col items-center" style="background-color: #85d8e5;">
 
 
 				<div class="card-container my-10 flex flex-col md:flex-row justify-center border-none items-center w-full  md:1/2 max-w-5xl">
@@ -178,7 +181,7 @@
 						  <h3 class="py-2 font-bold tracking-wide text-center uppercase text-white" style="font-size: x-large;">Games</h3>
 							
 						  <div class="flex items-center justify-end px-3 py-2">
-							  <button class="transition ease-in-out delay-150 learncha-font-2 hover:-translate-y-1 hover:scale-110 hover:bg-blue-100 duration-300 bg-white p-3 text-xs font-semibold text-white uppercase rounded focus:outline-none"><a href="{% url 'dictionary:games' %}">PLAY GAMES</a></button>
+								<a class="btn red" href="{% url 'dictionary:games' %}">PLAY GAMES</a>
 						  </div>
 					  </div>
 				  </div>
@@ -192,7 +195,9 @@
 						
 						<div class="flex items-center justify-end px-3 py-2">
 							<!-- <span class="font-bold text-gray-800 dark:text-gray-200">$129</span> -->
-							<button class="transition ease-in-out delay-150 learncha-font-2 hover:-translate-y-1  hover:scale-110 hover:bg-blue-100 duration-300  text-xs font-semibold text-white uppercase bg-white p-3  rounded  focus:bg-blue-300 dark:focus:bg-blue-300 focus:outline-none"><a href="{% url 'dictionary:search' %}">Search for words</a></button>
+							<a class="btn red" href="{% url 'dictionary:search' %}">Search for words</a>
+							 
+							 
 						</div>
 					</div>
 				  </div>
@@ -210,7 +215,7 @@
 						  <h3 class="py-2 font-bold tracking-wide text-center uppercase text-white" style="font-size: x-large;">Quiz</h3>
 						  
 						  <div class="flex items-center justify-end px-3 py-2">
-							  <button class="transition ease-in-out delay-150 learncha-font-2 hover:-translate-y-1 hover:scale-110  duration-300  text-xs font-semibold text-white uppercase rounded bg-white p-3  focus:outline-none"><a href="{% url 'books:subject_quiz' 'quiz' %}">Test Learning</a></button>
+<a class="btn red" href="{% url 'books:subject_quiz' 'quiz' %}">Test Learning</a>
 						  </div>
 					  </div>
 				  </div>
@@ -224,7 +229,7 @@
 						
 						<div class="flex items-center justify-end px-3 py-2">
 							<!-- <span class="font-bold text-gray-800 dark:text-gray-200">$129</span> -->
-							<button class="transition ease-in-out delay-150 learncha-font-2 hover:-translate-y-1 hover:scale-110 hover:bg-blue-100 duration-300 text-xs font-semibold text-white uppercase  rounded  bg-white p-3  focus:outline-none"><a href="{% url 'books:subjects' %}">Read and Have Fun</a></button>
+ <a href="{% url 'books:subjects' %}" class="btn red">Read</a>
 						</div>
 					</div>
 				  </div>
@@ -245,7 +250,7 @@
 						<a href="#">
 							<div class="box-info about">
 								<h2>About Learncha</h2>
-								<p>Enim ad minim veniam nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat duis aute irure dolor.</p>
+								<p>Learnchar is an educational Gamifying platform designed for kids that can help you instill a love of learning in your own child. This applies whether they're learning through homeschooling, online learning, offline or traditional classroom setting.</p>
 							</div>
 						</a>
 					</div>
@@ -253,7 +258,7 @@
 						<a href="#">
 							<div class="box-info experience">
 								<h2>Our experience</h2>
-								<p>Perspiciatis unde omnis iste natus voluptatem accusantium doloremque laudantium totam aperiam eaque dolor lorem.</p>
+								<p>Help your child discover their passion for math with our engaging, online and offline Gamifying platform</p>
 							</div>
 						</a>
 					</div>
@@ -261,179 +266,12 @@
 						<a href="#">
 							<div class="box-info fun">
 								<h2>Big fun for kids!</h2>
-								<p>Accusamus et iusto dignissimos ducimus blanditiis praesentium voluptatum deleniti corrupti quos dolores et quas molestias.</p>
+								<p>Designed by learning experts, your child can practice math, reading, phonics, and more.
+								</p>
 							</div>
 						</a>
 					</div>
 				</div>
-				<div class="top-pink-border"></div>
-				<div class="event-wrap">
-					<div class="block-event">
-						<div class="upcoming-event">
-							<h2>April’s upcoming event</h2>
-							<div class="event-description">
-								<h3><a href="#">Libero tempore cum soluta nobis est eligendi optio cumque nihil</a></h3>
-								<div class="metadata">
-									<time datetime="2014-04-17T09:00">17.04.14 
-									<span>09:00 AM</span></time>
-									<span>Lorem ipsum dolor</span>
-								</div>
-								<p>Vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-								<a class="btn yellow" href="#">Learn more</a>
-							</div>
-						</div>
-						<div class="widget-calendar">
-							<table class="event-calendar">
-								<col><col><col><col><col><col><col>
-								<thead>
-								<tr>
-									<th scope="col" class="controls"><span class="prev-mn"><a href="#">-</a></span></th>
-									<th scope="col" colspan="5" class="month">April 2014</th>
-									<th scope="col" class="controls"><span class="next-mn"><a href="#">-</a></span></th>
-								</tr>
-								<tr>
-									<th scope="col" title="Monday">Mon</th>
-									<th scope="col" title="Tuesday">Tue</th>
-									<th scope="col" title="Wednesday">Wed</th>
-									<th scope="col" title="Thursday">Thu</th>
-									<th scope="col" title="Friday">Fri</th>
-									<th scope="col" title="Saturday">Sat</th>
-									<th scope="col" title="Sunday">Sun</th>
-								</tr>
-								</thead>
-								<tbody>
-								<tr>
-									<td><div class="cell-wrap another-day">31</div></td><td><div class="cell-wrap">1</div></td><td><div class="cell-wrap">2</div></td><td><div class="cell-wrap">3</div></td><td><div class="cell-wrap">4</div></td><td><div class="cell-wrap">5</div></td>
-									<td><div class="cell-wrap archival sun">
-											<a href="#">6</a>
-											<div class="tooltip">
-												<div class="event-tooltip">
-													<h4>Libero tempore cum soluta nobis est eligendi optio</h4>
-													<div class="metadata">
-														<time datetime="2014-04-06T09:00">06.04.14 
-														<span>09:00 AM</span></time>
-														<span class="place">Lorem ipsum dolor</span>
-													</div>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat ipsum dui, quis posuere urna fermentum nec. Aliquam erat volutpat.</p>
-												</div>
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td><div class="cell-wrap">7</div></td><td><div class="cell-wrap">8</div></td>
-									<td><div class="cell-wrap archival wed">
-											<a href="#">9</a>
-											<div class="tooltip">
-												<div class="event-tooltip">
-													<h4>Libero tempore cum soluta nobis est eligendi optio</h4>
-													<div class="metadata">
-														<time datetime="2014-04-09T09:00">09.04.14 
-														<span>09:00 AM</span></time>
-														<span class="place">Lorem ipsum dolor</span>
-													</div>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat ipsum dui, quis posuere urna fermentum nec. Aliquam erat volutpat.</p>
-												</div>
-											</div>
-										</div>
-									</td>
-									<td><div class="cell-wrap">10</div></td><td><div class="cell-wrap">11</div></td>
-									<td><div class="cell-wrap archival sat">
-											<a href="#">12</a>
-											<div class="tooltip">
-												<div class="event-tooltip">
-													<h4>Libero tempore cum soluta nobis est eligendi optio</h4>
-													<div class="metadata">
-														<time datetime="2014-04-12T09:00">12.04.14 
-														<span>09:00 AM</span></time>
-														<span class="place">Lorem ipsum dolor</span>
-													</div>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat ipsum dui, quis posuere urna fermentum nec. Aliquam erat volutpat.</p>
-												</div>
-											</div>
-										</div>
-									</td>
-									<td><div class="cell-wrap">13</div></td>
-								</tr>
-								<tr>
-									<td><div class="cell-wrap">14</div></td><td><div class="cell-wrap">15</div></td><td><div class="cell-wrap">16</div></td>
-									<td><div class="cell-wrap upcoming thu">
-											<a href="#">17</a>
-											<div class="tooltip">
-												<div class="event-tooltip">
-													<h4>Libero tempore cum soluta nobis est eligendi optio</h4>
-													<div class="metadata">
-														<time datetime="2014-04-17T09:00">17.04.14 
-														<span>09:00 AM</span></time>
-														<span class="place">Lorem ipsum dolor</span>
-													</div>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat ipsum dui, quis posuere urna fermentum nec. Aliquam erat volutpat.</p>
-												</div>
-											</div>
-										</div>
-									</td>
-									<td><div class="cell-wrap">18</div></td><td><div class="cell-wrap">19</div></td><td><div class="cell-wrap">20</div></td>
-								</tr>
-								<tr>
-									<td><div class="cell-wrap">21</div></td>
-									<td><div class="cell-wrap upcoming tue">
-											<a href="#">22</a>
-											<div class="tooltip">
-												<div class="event-tooltip">
-													<h4>Libero tempore cum soluta nobis est eligendi optio</h4>
-													<div class="metadata">
-														<time datetime="2014-04-22T09:00">22.04.14 
-														<span>09:00 AM</span></time>
-														<span class="place">Lorem ipsum dolor</span>
-													</div>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat ipsum dui, quis posuere urna fermentum nec. Aliquam erat volutpat.</p>
-												</div>
-											</div>
-										</div>
-									</td>
-									<td><div class="cell-wrap">23</div></td><td><div class="cell-wrap">24</div></td>
-									<td><div class="cell-wrap upcoming fri">
-											<a href="#">25</a>
-											<div class="tooltip">
-												<div class="event-tooltip">
-													<h4>Libero tempore cum soluta nobis est eligendi optio</h4>
-													<div class="metadata">
-														<time datetime="2014-04-25T09:00">25.04.14 
-														<span>09:00 AM</span></time>
-														<span class="place">Lorem ipsum dolor</span>
-													</div>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat ipsum dui, quis posuere urna fermentum nec. Aliquam erat volutpat.</p>
-												</div>
-											</div>
-										</div>
-									</td>
-									<td><div class="cell-wrap">26</div></td><td><div class="cell-wrap">27</div></td>
-								</tr>
-								<tr>
-									<td><div class="cell-wrap upcoming mon">
-											<a href="#">28</a>
-											<div class="tooltip">
-												<div class="event-tooltip">
-													<h4>Libero tempore cum soluta nobis est eligendi optio</h4>
-													<div class="metadata">
-														<time datetime="2014-04-28T09:00">28.04.14 
-														<span>09:00 AM</span></time>
-														<span class="place">Lorem ipsum dolor</span>
-													</div>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat ipsum dui, quis posuere urna fermentum nec. Aliquam erat volutpat.</p>
-												</div>
-											</div>
-										</div>
-									</td>
-									<td><div class="cell-wrap">29</div></td><td><div class="cell-wrap">30</div></td><td><div class="cell-wrap another-day">1</div></td><td><div class="cell-wrap another-day">2</div></td><td><div class="cell-wrap another-day">3</div></td><td><div class="cell-wrap another-day">4</div></td>
-								</tr>
-								</tbody>
-							</table>
-							<div class="legend"><span class="upcoming">Upcoming event</span><span class="archival">Archival event</span> </div>
-						</div>
-					</div>
-				</div>
-				<div class="bottom-pink-border"></div>
 					<div class="widget-boxes news">
 						<h2>Latest news</h2>
 						<div class="box">
@@ -442,12 +280,12 @@
 								<div class="mask"></div>
 							</a>
 							<div class="box-info">
-								<h3><a href="#">Nostrud exercitation ullamco laboris</a></h3>
+								<h3><a href="#">This is Exciting</a></h3>
 								<div class="metadata">
 									<time datetime="2014-04-17">17.04.14</time>
-									<span>Sarah James</span>
+									<span>Prince Achoja</span>
 								</div>
-								<p>Omnis iste natus error sit voluptatem accusantium doloremque laudantium totam aperiam eaque ipsa quae ab illo inventore (...)</p>
+								<p>Introducing our STEM learning center in KANO Nigeria. Designed by learning experts, your child can now practice math, reading, phonics, and more. Step-by-Step Learning Path designed to help kids learn math, reading, science, and more</p>
 							</div>
 						</div>
 						<div class="box">
@@ -456,12 +294,12 @@
 								<div class="mask"></div>
 							</a>
 							<div class="box-info">
-								<h3><a href="#">Voluptatem accusantium doloremque</a></h3>
+								<h3><a href="#">We Have Lego</a></h3>
 								<div class="metadata">
 									<time datetime="2014-04-16">16.04.14</time>
-									<span>Tom Jones</span>
+									<span>Muhammad Abubakar</span>
 								</div>
-								<p>Voluptatem sequi nesciunt. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit sed quia (...)</p>
+								<p>Join our Lego Robotics EV3 classes every Saturday. Find the right instructor for you. Choose from many topics, skill levels, and languages. </p>
 							</div>
 						</div>
 						<div class="box">
@@ -470,12 +308,13 @@
 								<div class="mask"></div>
 							</a>
 							<div class="box-info">
-								<h3><a href="#">Duis aute irure dolor in reprehenderit</a></h3>
+								<h3><a href="#">Kano On the Go!</a></h3>
 								<div class="metadata">
 									<time datetime="2014-04-13">13.04.14</time>
-									<span>Alan Smith</span>
+									<span>Salma Gambo</span>
 								</div>
-								<p>Adipisicing elit do eiusmod tempor incididunt labore et dolore magna aliqua enim ad minim veniam, quis nostrud exercitation (...)</p>
+								<p>We have partnered with the Kano state Library board to introduce a platform where you can create a new picture storybook, translate a story, adapt a story for a different reading level and build your own storybook collection.
+								</p>
 							</div>
 						</div>
 					</div>
@@ -490,21 +329,12 @@
 							<div class="col_wrap">
 								<div class="col">
 									<h3>Our address</h3>
-									<address class="map">1186 Madison Ave, NY 10173</address>
-									<address class="mail"><a href="mailto:contact@kidschool.com">contact@kidschool.com</a></address>
-									<address class="phone">(580) 845 982 431</address>
-								</div>
-							</div>
-							<div class="col_wrap">
-								<div class="col">
-									<h3>Latest posts</h3>
-									<ul class="posts">
-										<li><a href="#">Dignissimos ducimus blanditiis</a></li>
-										<li><a href="#">Praesentium voluptatum deleniti</a></li>
-										<li><a href="#">Atque corrupti quos dolores</a></li>
-										<li><a href="#">Molestias excepturi sint occaecati</a></li>
-										<li><a href="#">Cupiditate provident similique</a></li>
-									</ul>
+									<address class="map">60 Ahmadu Bello Way, Nassarawa GRA Kano State Nigeria.
+
+									</address>
+									<address class="mail"><a href="mailto:Admin@stemlab.com.ng">Admin@stemlab.com.ng</a></address>
+									<address class="phone">+2348162224407
+									</address>
 								</div>
 							</div>
 							<div class="col_wrap">
@@ -552,7 +382,8 @@
 	<script src="js/tailwind.js"></script>
 	<script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
 	<script src="./js/jquery.min.js"></script>
-	<script src="./js/custom.js"></script><script>
+	<script src="./js/custom.js"></script>
+	<script>
 	  tailwind.config = {
 		theme: {
 		  extend: {

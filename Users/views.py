@@ -26,3 +26,10 @@ def add_points(request, point):
 @login_required
 def profile(request):
     return render(request, "registration/profile.html")
+
+def about(request):
+    return render(request, 'about.html')
+
+
+def contact(request):
+    return render(request, 'contact.html')

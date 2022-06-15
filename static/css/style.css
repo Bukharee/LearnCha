@@ -305,7 +305,7 @@ input.white[type=submit]:hover{
 	color: #ea6b6e;
 }
 #nav ul a {
-	color: #98785b;
+	color: #85d8e5;
 }
 #nav ul a:hover, #nav ul a.active {
 	color: #ea6b6e;
@@ -677,6 +677,7 @@ h3 {
 .news h2, .services h2{
 	font-family: 'Gochi Hand', cursive;
 	font-size: 48px;
+	color: #85d8e5;
 
 }
 .services h2 {
