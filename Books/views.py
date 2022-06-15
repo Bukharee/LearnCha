@@ -18,6 +18,7 @@ def categories(request):
 
 def subjects_list(request, quiz=False):
     if not quiz:
+        "one two three"
         link = "grade"
     else:
         link = "quiz"
