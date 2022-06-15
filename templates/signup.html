@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>singn up </title>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+    <style>
+        .main {
+            display: flex;
+            justify-content: space-around;
+        }
+        .form-section{
+            height: 40%;
+            margin-top: 50px;
+        }
+      
+        img{
+            object-fit: cover;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 750px){
+            .form-section{
+                height: 20%;
+                width: 100%;
+                margin: 20px;
+                padding: 5px;
+                
+            }
+        }
+    </style>
+
+
+</head>
+
+<body class="bg-blue-200">
+
+    <div class="main mt-10 ">
+
+
+        <section class="form-section max-w-4xl p-6  bg-white rounded-md shadow-md dark:bg-gray-800">
+            <h2 class=" font-semibold  capitalize dark:text-white text-center text-blue-500 text-4xl">Sign Up</h2>
+
+            <form>
+                <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+                    <div>
+                        <label class="text-gray-700 dark:text-gray-200" for="fname">Full Name</label>
+                        <input id="fname" type="text" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                    </div>
+
+                    <div>
+                        <label class="text-gray-700 dark:text-gray-200" for="phoneNumber">Phone Number</label>
+                        <input id="phoneNumber" type="phone" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                    </div>
+
+                    <div>
+                        <label class="text-gray-700 dark:text-gray-200" for="grade">Grade</label>
+                        <input id="grade" type="text" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                    </div>
+
+                    <div>
+                        <label class="text-gray-700 dark:text-gray-200" for="country">Country</label>
+                        <input id="country" type="text" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                    </div>
+
+                    <div>
+                        <label class="text-gray-700 dark:text-gray-200" for="password">Password</label>
+                        <input id="password" type="password" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                    </div>
+
+                    <div>
+                        <label class="text-gray-700 dark:text-gray-200" for="c_password">Confirm Password</label>
+                        <input id="c_password" type="password" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                    </div>
+                </div>
+
+                <div class="flex justify-end mt-6">
+                    <button class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-800 focus:outline-none focus:bg-gray-600">Submit</button>
+                </div>
+            </form>
+        </section>
+
+
+
+        <img src="./images/early-childhood-education-768x512-removebg-preview.png" class="hidden md:block myImages" style="width: 25%; object-fit: cover; clear:both;" alt="" srcset="">
+
+    </div>
+
+</body>
+<script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js "></script>
+
+
+</html>

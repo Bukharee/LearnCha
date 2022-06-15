@@ -1,5 +1,120 @@
-<form method="post">
-{% csrf_token %}
-  {{ form.as_p }}
- <input type="submit" value="Signup">
-</form>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>singn up </title>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+    <style>
+        .main {
+            display: flex;
+            justify-content: space-around;
+        }
+        .form-section{
+            height: 40%;
+            margin-top: 50px;
+        }
+      
+        img{
+            object-fit: cover;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 750px){
+            .form-section{
+                height: 20%;
+                width: 100%;
+                margin: 20px;
+                padding: 5px;
+                
+            }
+        }
+        .error-message {
+          font-size: small;
+    color: red;
+    margin: 10px;
+        }
+        .link {
+          color: #4e87a0;
+        }
+
+    </style>
+
+
+</head>
+
+<body class="bg-blue-200">
+
+    <div class="main mt-10 ">
+
+
+        <section class="form-section max-w-4xl p-6  bg-white rounded-md shadow-md dark:bg-gray-800">
+            <h2 class=" font-semibold  capitalize dark:text-white text-center text-blue-500 text-4xl">Sign Up</h2>
+
+            <form action="" method="post">
+              {% csrf_token %}
+                <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+                    <div>
+                        <label class="text-gray-700 dark:text-gray-200" for="fname">Username</label>
+                        <input id="id_username" name="username" maxlength="150" autofocus required type="text" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                    </div>
+
+                    <div>
+                        <label class="text-gray-700 dark:text-gray-200" for="phoneNumber">Full Name</label>
+                        <input id="id_name"  type="text" max_length="100" name="name" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                    </div>
+
+                    <div>
+                        <label class="text-gray-700 dark:text-gray-200" for="grade">Phone Number</label>
+                        <input id="id_phone" type="tel" name="phone" required max-length="128" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                    </div>
+
+                    <div>
+                        <label class="text-gray-700 dark:text-gray-200" for="country">Grade</label>
+                        {{ form.grade }}
+                    </div>
+
+                    <div>
+                        <label class="text-gray-700 dark:text-gray-200" for="password">Country</label>
+                        {{ form.nation }}
+                    </div>
+
+                    <div>
+                        <label class="text-gray-700 dark:text-gray-200" for="c_password">Password</label>
+                        <input id="id_password1" name="password1" type="password" required autocomplete="new-password" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                    </div>
+
+                    <div>
+                        <label class="text-gray-700 dark:text-gray-200" for="c_password">Confirm Password</label>
+                        <input id="id_password2" name="password2" type="password" required autocomplete="new-password" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                    </div>
+                  </div>
+                  {% if form.errors %}
+                  {% for field, errors in form.errors.items %}
+                  {% for error in errors %}
+                  <p class="error-message">{{ error }}</p>
+                  {% endfor %}
+                  {% endfor %}
+                  {% endif %}
+                    <button class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-800 focus:outline-none focus:bg-gray-600">Submit</button>
+                </div>
+            </form>
+        </section>
+
+
+
+        <img src="./images/early-childhood-education-768x512-removebg-preview.png" class="hidden md:block myImages" style="width: 25%; object-fit: cover; clear:both;" alt="" srcset="">
+
+    </div>
+
+</body>
+<script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js "></script>
+<script>
+  let grade = document.getElementById("id_grade").classList.add("block", "w-full", "px-4", "py-2", "mt-2", "text-gray-700", "bg-white", "border", "border-gray-200", "rounded-md", "dark:bg-gray-800", "dark:text-gray-300", "dark:border-gray-600", "focus:border-blue-400", "focus:ring-blue-300", "focus:ring-opacity-40", "dark:focus:border-blue-300", "focus:outline-none", "focus:ring")
+  document.getElementById("id_nation").classList.add("block", "w-full", "px-4", "py-2", "mt-2", "text-gray-700", "bg-white", "border", "border-gray-200", "rounded-md", "dark:bg-gray-800", "dark:text-gray-300", "dark:border-gray-600", "focus:border-blue-400", "focus:ring-blue-300", "focus:ring-opacity-40", "dark:focus:border-blue-300", "focus:outline-none", "focus:ring")
+</script>
+
+</html>
