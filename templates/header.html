@@ -1,0 +1,20 @@
+		<!-- header starts hre... -->
+        <header id="header">
+            <div class="left-part "></div>
+            <a id="logo" href="index.html">Learncha</a>
+            <div class="bar-holder">
+                <a class="menu_trigger" href="#"></a>
+                <nav id="nav">
+                    <ul class="">
+                        <li><a href="{% url 'users:about' %}">About us</a></li>
+                        <li><a href="{% url 'dictionary:games' %}">Games</a></li>
+                        <li><a href="{% url 'dictionary:search' %}">Dictionary</a></li>
+                        <li><a href="diy.html">DIY</a></li>
+                        <li><a href="climate-challenge.html">Climate Challenge</a></li>
+                        <li><a href="{% url 'books:subject_quiz' 'quiz' %}">Quiz</a></li>
+                        <li><a href="{% url 'users:contact' %}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+            <!-- header ends here... -->

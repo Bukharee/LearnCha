@@ -22,108 +22,11 @@
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
-<div id="wrapper" class="homepage">
-    <div class="wrapper-holder">
 
-        <!-- header starts hre... -->
-        <header id="header">
-            <div class="left-part "></div>
-            <a id="logo" href="index.html">Learncha</a>
-            <div class="bar-holder">
-                <a class="menu_trigger" href="#"></a>
-                <nav id="nav">
-                    <ul class="">
-                        <li><a href="{% url 'users:about' %}">About us</a></li>
-                        <li><a href="{% url 'dictionary:games' %}">Games</a></li>
-                        <li><a href="{% url 'dictionary:search' %}">Dictionary</a></li>
-                        <li><a href="diy.html">DIY</a></li>
-                        <li><a href="climate-challenge.html">Climate Challenge</a></li>
-                        <li><a href="{% url 'books:subject_quiz' 'quiz' %}">Quiz</a></li>
-                        <li><a href="{% url 'users:contact' %}">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-            <!-- header ends here... -->
 
-            <!-- carousel starts here... -->
-        <div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
-            <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-              <button
-                type="button"
-                data-bs-target="#carouselExampleCaptions"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Slide 1"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#carouselExampleCaptions"
-                data-bs-slide-to="1"
-                aria-label="Slide 2"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#carouselExampleCaptions"
-                data-bs-slide-to="2"
-                aria-label="Slide 3"
-              ></button>
-            </div>
-            <div class="carousel-inner relative w-full overflow-hidden">
-              <div class="carousel-item active relative float-left w-full">
-                <img
-                  src="{% static 'images/caro1.jpg' %}"
-                  class="block w-full h-96 object-cover"
-                  alt="..."
-                />
-                <div class="carousel-caption hidden md:block absolute text-center">
-                  <h5 class="text-xl">Gamify the Sysytem Of Learning!</h5>
-                  <p>Number One Ultimate Platform That Gamifies Learning </p>
-                </div>
-              </div>
-              <div class="carousel-item relative float-left w-full">
-                <img
-                  src="{% static 'images/caro2.jpg' %}"
-                  class="block w-full h-96 object-cover images"
-                  alt="..."
-                />
-                <div class="carousel-caption hidden md:block absolute text-center">
-                  <h5 class="text-xl">Have Fun And Learn</h5>
-                  <p>Dont Stop Playing Your Games Just Beacause You Want To Study </p>
-                </div>
-              </div>
-              <div class="carousel-item relative float-left w-full">
-                <img
-                  src="{% static 'images/caro4.jpg' %}"
-                  class="block w-full h-96 object-cover images"
-                  alt="..."
-                />
-                <div class="carousel-caption hidden md:block absolute text-center">
-                  <h5 class="text-xl"> </h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
-            </div>
-            <button
-              class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide="prev"
-            >
-              <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide="next"
-            >
-              <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-          <!-- carousel ends ..... -->
+   {% include 'header.html' %}
+
+
           {% block content %}
           {% endblock  %}
+{% include 'footer.html' %}

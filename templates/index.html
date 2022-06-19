@@ -1,55 +1,14 @@
+{% extends "base.html" %}
 <!DOCTYPE html>
 {% load static %}
 <!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
 <!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--> <html lang="en"> <!--<![endif]-->
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="format-detection" content="telephone=no">
-	<title>Kid' school - Home</title>
-	<link href='http://fonts.googleapis.com/css?family=Gochi+Hand|Arvo:400,700' rel='stylesheet' type='text/css'>
-	<link href="css/jquery.bxslider.css" rel="stylesheet" />
-	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
-	<script src="https://cdn.tailwindcss.com"></script>
-	<link rel="stylesheet" href="./dist/output.css">
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-</head>
+{% block content %}
 <body>
 	<div id="wrapper" class="homepage">
 		<div class="wrapper-holder">
 
-			<!-- header starts hre... -->
-			<header id="header">
-				<div class="left-part "></div>
-				<a id="logo" href="index.html">Learncha</a>
-				<div class="bar-holder">
-					<a class="menu_trigger" href="#"></a>
-					<nav id="nav">
-						<ul class="">
-							<li><a href="{% url 'users:about' %}">About us</a></li>
-							<li><a href="{% url 'dictionary:games' %}">Games</a></li>
-							<li><a href="{% url 'dictionary:search' %}">Dictionary</a></li>
-							<li><a href="diy.html">DIY</a></li>
-							<li><a href="climate-challenge.html">Climate Challenge</a></li>
-							<li><a href="{% url 'books:subject_quiz' 'quiz' %}">Quiz</a></li>
-							<li><a href="{% url 'users:contact' %}">Contact</a></li>
-						</ul>
-					</nav>
-				</div>
-			</header>
-				<!-- header ends here... -->
 
 				<!-- carousel starts here... -->
 			<div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
@@ -321,56 +280,7 @@
 			</section>
 		</div>
 		<div class="top-blue-border"></div>
-		<footer id="footer">
-			<div class="footer-holder">
-				<div class="footer-frame">
-					<div class="footer-content">
-						<div class="col-holder">
-							<div class="col_wrap">
-								<div class="col">
-									<h3>Our address</h3>
-									<address class="map">60 Ahmadu Bello Way, Nassarawa GRA Kano State Nigeria.
-
-									</address>
-									<address class="mail"><a href="mailto:Admin@stemlab.com.ng">Admin@stemlab.com.ng</a></address>
-									<address class="phone">+2348162224407
-									</address>
-								</div>
-							</div>
-							<div class="col_wrap">
-								<div class="col">
-									<h3>Follow us</h3>
-									<p class="social">Accusamus iusto odio dignissimos ducimus qui blanditiis praesentium</p>
-									<ul class="social">
-										<li><a class="facebook" href="#">Facebook</a></li>
-										<li><a class="google" href="#">Google+</a></li>
-										<li><a class="twitter" href="#">Twitter</a></li>
-										<li><a class="pinterest" href="#">Pinterest</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col_wrap">
-								<div class="col">
-									<h3>Newsletter</h3>
-									<p class="form-newsletter">Voluptas sit aspernatur consequuntur.</p>
-									<form action="#" class="form-newsletter">
-										<fieldset>
-											<input type="email" placeholder="Your email..." />
-											<input class="btn white" type="submit" value="Subscribe" />
-										</fieldset>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="footer-bottom">
-						<div class="holder">
-							<p>Copyright 2022 Learncha. All rights reserved.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>	
+		
 	</div>
 	
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -396,3 +306,4 @@
 	</script>
 </body>
 </html>
+{% endblock %}

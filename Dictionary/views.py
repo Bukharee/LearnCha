@@ -45,4 +45,4 @@ def d_game3(request):
 
 
 def game_list(request):
-    return render(request, "games_list.html")
+    return render(request, "games.html")
