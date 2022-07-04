@@ -1,8 +1,49 @@
+import json
 from django.shortcuts import render
 import os
 import requests
 from .forms import SearchForm
 # Create your views here.
+
+
+def get_audio(data):
+    audio = None
+    for sound in data:
+        print("sound['audio']", sound["audio"])
+        print(sound["audio"] != '')
+        if sound["audio"] != '':
+            audio = sound["audio"]
+            return audio
+    return audio
+
+
+def structure_word(response):
+    print("nazo nan")
+    """
+    Input: Json Response From Open Dictionary Api -Guaranteed an array of objects.
+    Output: Python Dictionary Contains Word, Its Meaning, Pronounciation, Phonetics,
+    Examples, Synonyms and Antonyms
+    """
+    result = {"pronounciation": [], "examples": [], "synonyms": [],
+              "antonyms": []}  # final  dictionary containing every thing
+    # contains part of spech, definations and all will be extracted to our results array
+    meanings = []
+    phonetics = []
+    for dictionary in response:
+        # only assign word to result dict if it doesn't already exist
+        result.setdefault("word", dictionary["word"])
+
+        # only assign phonetic to result dict if it doesn't already exist
+        result.setdefault("phonetic", dictionary["phonetic"])
+
+        for meaning in dictionary["meanings"]:
+            meanings.append(meaning)
+
+        for phonetic in dictionary["phonetics"]:
+            phonetics.append(phonetic)
+
+    print(phonetics)
+    print("the audio", get_audio(phonetics))
 
 
 def search(request):
@@ -15,19 +56,21 @@ def search(request):
     if query:
         try:
             response = requests.get(f"{dictionary_url}{query}").json()
-            print(response)
-            print(response[0]["meanings"][0]["definitions"][0]["definition"])
+            structure_word(response)
+            # print(response)
+            # print(response[0]["meanings"][0]["definitions"][0]["definition"])
             if "title" in response:
                 return render(request, 'search.html', {"response": "NOT A VALID WORD", "form": form})
             data = {
                 "word": response[0]["word"],
-                    "phonetic": response[0]["phonetic"],
-                    "meaning": response[0]["meanings"][0]["definitions"][0]["definition"],
-                    "audio": response[0]['phonetics'][0]['audio'],
-                    }
+                "phonetic": response[0]["phonetic"],
+                "meaning": response[0]["meanings"][0]["definitions"][0]["definition"],
+                "audio": response[0]['phonetics'][0]['audio'],
+            }
             print(data["word"])
             return render(request, "search.html", {"response": response, "data": data, "form": form})
-        except:
+        except Exception as e:
+            print(e)
             return render(request, "search.html", {"response": "No Internet Connection", "form": form})
     else:
         return render(request, "search.html", {"form": form})
@@ -39,6 +82,7 @@ def d_game(request):
 
 def d_game2(request):
     return render(request, "d_game2.html")
+
 
 def d_game3(request):
     return render(request, "one-word-four-pictures.html")
