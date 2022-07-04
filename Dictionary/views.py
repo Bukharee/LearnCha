@@ -17,6 +17,7 @@ def get_audio(data):
     return audio
 
 
+
 def structure_word(response):
     print("nazo nan")
     """
@@ -24,8 +25,8 @@ def structure_word(response):
     Output: Python Dictionary Contains Word, Its Meaning, Pronounciation, Phonetics,
     Examples, Synonyms and Antonyms
     """
-    result = {"pronounciation": [], "examples": [], "synonyms": [],
-              "antonyms": []}  # final  dictionary containing every thing
+    result = {"pronounciation": [],
+              }  # final  dictionary containing every thing
     # contains part of spech, definations and all will be extracted to our results array
     meanings = []
     phonetics = []
@@ -42,8 +43,9 @@ def structure_word(response):
         for phonetic in dictionary["phonetics"]:
             phonetics.append(phonetic)
 
-    print(phonetics)
-    print("the audio", get_audio(phonetics))
+    result["pronounciation"] = get_audio(phonetics)
+    result["meanings"] = meanings
+    return result
 
 
 def search(request):
@@ -57,16 +59,9 @@ def search(request):
         try:
             response = requests.get(f"{dictionary_url}{query}").json()
             structure_word(response)
-            # print(response)
-            # print(response[0]["meanings"][0]["definitions"][0]["definition"])
             if "title" in response:
                 return render(request, 'search.html', {"response": "NOT A VALID WORD", "form": form})
-            data = {
-                "word": response[0]["word"],
-                "phonetic": response[0]["phonetic"],
-                "meaning": response[0]["meanings"][0]["definitions"][0]["definition"],
-                "audio": response[0]['phonetics'][0]['audio'],
-            }
+            data = structure_word(response)
             print(data["word"])
             return render(request, "search.html", {"response": response, "data": data, "form": form})
         except Exception as e:
