@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Dictionary',
     'Books',
     'Api',
+    'Climate',
 
     # third party
     'phonenumber_field',
