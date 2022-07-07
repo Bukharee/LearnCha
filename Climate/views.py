@@ -7,10 +7,11 @@ from rest_framework import permissions, authentication, generics
 from .serializers import (CreateChallangeSerializer,
                           ContributionSerializer, ViewChallangesSerializer)
 from .models import Challange
+from .mixins import AuthPermMixin
 # Create your views here.
 
 
-class CreateChallangeAPIView(generics.CreateAPIView):
+class CreateChallangeAPIView(generics.CreateAPIView, AuthPermMixin):
     queryset = Challange.objects.all()
     serializer_class = CreateChallangeSerializer
 
