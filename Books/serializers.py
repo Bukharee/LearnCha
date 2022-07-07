@@ -24,7 +24,12 @@ class BooksSerializer(serializers.ModelSerializer):
 
 
 class AnswersSerializer(serializers.ModelSerializer):
+    question = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = Answer
         fields = ["question", "correct", "first_option",
                   "second_option", "third_option"]
+
+    def get_question(self, obj):
+        return obj.question.question

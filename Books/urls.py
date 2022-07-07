@@ -1,6 +1,7 @@
 from importlib.resources import path
 from django.urls import path
-from .views import books_list, subjects_list, quiz, SubjectsListAPIView, books_list_api
+from .views import (books_list, subjects_list, quiz,
+                    SubjectsListAPIView, books_list_api, quiz_api_view)
 
 app_name = "books"
 
@@ -12,4 +13,6 @@ urlpatterns = [
     path('subjects-list', SubjectsListAPIView.as_view(), name="subjects-list"),
     path('books-list/<slug:subject_title>',
          books_list_api, name="books-list"),
+    path('questions-list/<slug:subject_title>',
+         quiz_api_view, name="questions_list")
 ]
