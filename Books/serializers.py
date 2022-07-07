@@ -13,9 +13,14 @@ class SubjectsSerializer(serializers.ModelSerializer):
 
 
 class BooksSerializer(serializers.ModelSerializer):
+    my_subject = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = Books
-        fields = ["title", "book", "cover", "grade", "subject"]
+        fields = ["title", "book", "cover", "grade", "my_subject"]
+
+    def get_my_subject(self, obj):
+        return obj.subject.title
 
 
 class AnswersSerializer(serializers.ModelSerializer):

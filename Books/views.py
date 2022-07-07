@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from .models import Subject, Books, Answer
 from django.contrib.auth.decorators import login_required
 from .serializers import SubjectsSerializer, BooksSerializer, AnswersSerializer
-from rest_framework import generics
+from rest_framework import generics, permissions, authentication
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
+from rest_framework.response import Response
 
 # Create your views here.
 
@@ -68,3 +70,18 @@ def encyclopedia(request):
 class SubjectsListAPIView(generics.ListAPIView):
     queryset = subjects = Subject.objects.all()
     serializer_class = SubjectsSerializer
+
+@permission_classes([permissions.IsAuthenticated])
+@authentication_classes([authentication.TokenAuthentication])
+@api_view(["GET"])
+def books_list_api(request, subject_title):
+    try:
+        subject = get_object_or_404(Subject, slug=subject_title)
+    except Exception:
+        return Response({"books": None, "message": "not a valid subject"}, status=404)
+    else:
+        books = Books.objects.filter(subject=subject, grade=request.user.grade)
+        print(books)
+        serializer = BooksSerializer(books, many=True)
+        print(serializer.data)
+        return Response(serializer.data)
