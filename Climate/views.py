@@ -19,3 +19,9 @@ class CreateChallangeAPIView(generics.CreateAPIView, AuthPermMixin):
 class ListChallangesAPIView(generics.ListAPIView):
     queryset = Challange.objects.all()
     serializer_class = ViewChallangesSerializer
+
+
+class ChallangeDetailAPIView(generics.RetrieveAPIView):
+    queryset = Challange.objects.all()
+    serializer_class = ViewChallangesSerializer
+    lookup_field = "pk"
