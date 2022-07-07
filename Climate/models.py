@@ -16,7 +16,7 @@ class Contribution(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
 
-class Challenge(models.Model):
+class Challange(models.Model):
     starts = models.DateTimeField(auto_now_add=True)
     challange_type = models.CharField(max_length=50, choices=CHALLENGE_TYPE)
     title = models.CharField(max_length=200)

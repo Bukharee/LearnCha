@@ -1,13 +1,29 @@
 from dataclasses import fields
 from rest_framework import serializers
-from .models import Challenge, Contribution
+from .models import Challange, Contribution
 
 
-class ChallangeSerializer(serializers.ModelField):
-    
+class CreateChallangeSerializer(serializers.ModelSerializer):
+
     class Meta:
-        model = Challenge
+        model = Challange
         fields = ["challange_type", "title", "target"]
+
+    def create(self, validated_data):
+        request = self.context.get("request")
+        user = request.user
+        challange = Challange(
+            **validated_data
+        )
+        challange.creator = user
+        challange.save()
+        return challange
+
+
+class ViewChallangesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Challange
+        fields = '__all__'
 
 
 class ContributionSerializer(serializers.ModelSerializer):

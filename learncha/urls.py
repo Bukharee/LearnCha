@@ -34,6 +34,7 @@ urlpatterns = [
     path('api/', include("Api.urls")),
     path('api/', include("Books.urls")),
     path('api/', include("Dictionary.urls")),
+    path('climate/', include("Climate.urls")),
 
 ]
 
