@@ -2,7 +2,9 @@ from dataclasses import fields
 from rest_framework import serializers
 from .models import Challange, Contribution
 
-
+def create_plier():
+    #TODO: a plier will be automatically created for a new challange
+    pass
 class CreateChallangeSerializer(serializers.ModelSerializer):
 
     class Meta:

@@ -1,7 +1,7 @@
 from typing import List
 from django.urls import path
 from .views import (CreateChallangeAPIView,
-                    ListChallangesAPIView, ChallangeDetailAPIView)
+                    ListChallangesAPIView, ChallangeDetailAPIView, ContibuteAPIView)
 urlpatterns = [
     path("create-challange", CreateChallangeAPIView.as_view(),
          name="create_challange"),
@@ -10,4 +10,7 @@ urlpatterns = [
 
     path("challange-detail/<int:pk>", ChallangeDetailAPIView.as_view(),
          name="view_challange"),
+
+    path("contribute/", ContibuteAPIView.as_view(),
+         name="contribute"),
 ]

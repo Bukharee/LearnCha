@@ -1,12 +1,9 @@
 from django.shortcuts import render
 from rest_framework.response import Response
-from rest_framework.authentication import authenticate
-from rest_framework.decorators import (
-    authentication_classes, permission_classes, api_view)
-from rest_framework import permissions, authentication, generics
+from rest_framework import generics
 from .serializers import (CreateChallangeSerializer,
                           ContributionSerializer, ViewChallangesSerializer)
-from .models import Challange
+from .models import Challange, Contribution
 from .mixins import AuthPermMixin
 # Create your views here.
 
@@ -21,7 +18,12 @@ class ListChallangesAPIView(generics.ListAPIView):
     serializer_class = ViewChallangesSerializer
 
 
-class ChallangeDetailAPIView(generics.RetrieveAPIView):
+class ChallangeDetailAPIView(generics.RetrieveAPIView, AuthPermMixin):
     queryset = Challange.objects.all()
     serializer_class = ViewChallangesSerializer
     lookup_field = "pk"
+
+
+class ContibuteAPIView(generics.CreateAPIView, AuthPermMixin):
+    queryset = Contribution.objects.all()
+    serializer_class = ContributionSerializer
