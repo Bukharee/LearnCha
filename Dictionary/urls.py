@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import search, d_game, game_list, d_game2, d_game3, dictionary_search_api
+from .views import search, d_game, game_list, d_game2, d_game3, 
 
 app_name = "dictionary"
 
@@ -8,6 +8,5 @@ urlpatterns = [path('', search, name="search"),
                path('games', game_list, name="games"),
                path('d_game2', d_game2, name="d_game2"),
                path('d_game3', d_game3, name="d_game3"),
-               path('dubo', dictionary_search_api,
-                    name="dictionary_search_api"),
+
                ]

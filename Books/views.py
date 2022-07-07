@@ -1,5 +1,3 @@
-from http.client import ResponseNotReady
-from turtle import title
 from django.shortcuts import render, get_object_or_404
 from .models import Subject, Books, Answer
 from django.contrib.auth.decorators import login_required
@@ -64,6 +62,7 @@ def quiz(request, subject_title):
 
 @login_required
 def encyclopedia(request):
+    # TODO: implement encyclopedia
     pass
 
 
