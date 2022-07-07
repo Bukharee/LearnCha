@@ -1,9 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Subject, Books, Answer
 from django.contrib.auth.decorators import login_required
-
+from .serializers import SubjectsSerializer, BooksSerializer, AnswersSerializer
+from rest_framework import generics
 
 # Create your views here.
+
+
 def categories(request):
     """
     our home categories goes here
@@ -58,3 +61,10 @@ def quiz(request, subject_title):
 @login_required
 def encyclopedia(request):
     pass
+
+
+# the api code starts here
+
+class SubjectsListAPIView(generics.ListAPIView):
+    queryset = subjects = Subject.objects.all()
+    serializer_class = SubjectsSerializer
