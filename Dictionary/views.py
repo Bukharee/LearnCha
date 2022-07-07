@@ -1,25 +1,22 @@
-import json
 from django.shortcuts import render
-import os
 import requests
 from .forms import SearchForm
+from rest_framework import serializers
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 # Create your views here.
 
 
 def get_audio(data):
     audio = None
     for sound in data:
-        print("sound['audio']", sound["audio"])
-        print(sound["audio"] != '')
         if sound["audio"] != '':
             audio = sound["audio"]
             return audio
     return audio
 
 
-
 def structure_word(response):
-    print("nazo nan")
     """
     Input: Json Response From Open Dictionary Api -Guaranteed an array of objects.
     Output: Python Dictionary Contains Word, Its Meaning, Pronounciation, Phonetics,
@@ -62,10 +59,8 @@ def search(request):
             if "title" in response:
                 return render(request, 'search.html', {"response": "NOT A VALID WORD", "form": form})
             data = structure_word(response)
-            print(data["word"])
             return render(request, "search.html", {"response": response, "data": data, "form": form})
         except Exception as e:
-            print(e)
             return render(request, "search.html", {"response": "No Internet Connection", "form": form})
     else:
         return render(request, "search.html", {"form": form})
@@ -85,3 +80,20 @@ def d_game3(request):
 
 def game_list(request):
     return render(request, "games.html")
+
+
+@api_view(["GET"])
+def dictionary_search_api(request):
+    dictionary_url = "https://api.dictionaryapi.dev/api/v2/entries/en/"
+    query = request.GET.get('query')
+    if query:
+        try:
+            response = requests.get(f"{dictionary_url}{query}").json()
+            if "title" in response:
+                return Response({"response": "NOT A VALID WORD"})
+            data = structure_word(response)
+            return Response({"data": data})
+        except Exception as e:
+            return Response({"response": "Something went wrong"})
+    else:
+        return Response({"message": "you did'nt pass any search word"}, status=400)
