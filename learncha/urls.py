@@ -25,14 +25,12 @@ admin.site.site_title = '   '
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Users.urls')),
     path("accounts/", include("Users.urls")),
     path("dictionary", include("Dictionary.urls")),
     path('accounts/', include('django.contrib.auth.urls')),
     path('books/', include('Books.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include("Api.urls")),
-
 
 ]
 

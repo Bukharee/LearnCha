@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import search, d_game, game_list, d_game2, d_game3, 
+from .views import search, d_game, game_list, d_game2, d_game3
 
 app_name = "dictionary"
 
